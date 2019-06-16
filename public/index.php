@@ -1,7 +1,9 @@
 <?php
 namespace Wambo\Demo;
 
+use Exception;
 use Wambo\Demo\Core\App;
+use Wambo\Demo\Demo\Registration;
 
 error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
 ini_set('display_errors', 1);
@@ -20,9 +22,9 @@ if (!file_exists($autoload_filename)) {
 require_once $autoload_filename;
 
 $app = new App();
-
-$app->get('/', function ($request, $response) {
-    return $response->getBody()->write("Hello world!");
-});
-
-$app->run();
+$app->registerPackage(new Registration());
+try {
+    $app->run();
+} catch (Exception $e) {
+    echo 'error';
+}
