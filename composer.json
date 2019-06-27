@@ -5,8 +5,7 @@
   "require": {
     "php": ">=7.2",
     "slim/slim": "^3.12",
-    "php-di/slim-bridge": "^2.0",
-    "ext-spltype": "*"
+    "php-di/slim-bridge": "^2.0"
   },
   "require-dev": {
     "phpunit/phpunit": ">=5.0",
@@ -30,11 +29,11 @@
     "start": "php -S localhost:8080 -t public",
     "test": "phpunit",
     "lint": "vendor/bin/lint src/",
-    "cs": "vendor/bin/phpcs --standard=PSR2 src/",
-    "cbf": "vendor/bin/phpcbf --standard=PSR2 src/",
-    "loc": "vendor/bin/phploc src/",
-    "md": "vendor/bin/phpmd src/ text ruleset.xml",
-    "cpd": "vendor/bin/phpcpd src/"
+    "phpcs": "vendor/bin/phpcs --standard=PSR2 src/",
+    "php-cs-fixer": "vendor/bin/phpcbf --standard=PSR2 src/",
+    "phploc": "vendor/bin/phploc src/",
+    "phpmd": "vendor/bin/phpmd src/ text ruleset.xml",
+    "phpcpd": "vendor/bin/phpcpd src/"
   },
   "config": {
     "preferred-install": {
