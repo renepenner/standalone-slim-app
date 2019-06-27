@@ -30,6 +30,11 @@
                 "conditions": []
             },
             {
+                "action": "composer php-cs-fixer",
+                "options": [],
+                "conditions": []
+            },
+            {
                 "action": "composer phpcs",
                 "options": [],
                 "conditions": []
