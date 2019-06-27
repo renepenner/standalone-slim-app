@@ -14,7 +14,8 @@
     "phpmd/phpmd": "*",
     "phploc/phploc": "*",
     "sebastian/phpcpd": "*",
-    "captainhook/captainhook": "^4.4"
+    "captainhook/captainhook": "^4.4",
+    "povils/phpmnd": "^2.1"
   },
   "autoload": {
     "psr-4": {
@@ -33,12 +34,14 @@
     "php-cs-fixer": "vendor/bin/phpcbf --standard=PSR2 src/",
     "phploc": "vendor/bin/phploc src/",
     "phpmd": "vendor/bin/phpmd src/ text ruleset.xml",
-    "phpcpd": "vendor/bin/phpcpd src/",
+    "phpcpd": "vendor/bin/phpcpd --min-lines 3 --min-tokens 20 src/",
+    "phpmnd": "vendor/bin/phpmnd ./src",
     "test-all": [
       "composer php-cs-fixer",
       "composer phpcs",
       "composer phpmd",
       "composer phpcpd",
+      "composer phpmnd",
       "composer test"
     ]
   },
