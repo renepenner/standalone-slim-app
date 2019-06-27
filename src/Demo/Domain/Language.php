@@ -1,7 +1,7 @@
 <?php
 namespace Wambo\Demo\Demo\Domain;
 
-use Exception;
+use InvalidArgumentException;
 
 class Language
 {
@@ -13,12 +13,12 @@ class Language
     private $language;
 
     /**
-     * @throws Exception
+     * @throws InvalidArgumentException
      */
     public function __construct(string $language)
     {
         if (!in_array($language, self::AVAILABLE_LANGUAGES)) {
-            throw new Exception('Language not supported!');
+            throw new InvalidArgumentException('Language not supported!');
         }
 
         $this->language = $language;

@@ -10,7 +10,6 @@ class TextMessagePresenter
     public function __invoke(Response $response, MessageModel $messageViewModel) : ResponseInterface
     {
         $textMessage = $messageViewModel->getMessage();
-
         return $response->write($textMessage);
     }
 }

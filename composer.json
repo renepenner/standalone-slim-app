@@ -23,18 +23,24 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "Wambo\\Tests\\Unit\\": "tests/Unit"
     }
   },
   "scripts": {
     "start": "php -S localhost:8080 -t public",
     "test": "phpunit",
-    "lint": "vendor/bin/lint src/",
     "phpcs": "vendor/bin/phpcs --standard=PSR2 src/",
     "php-cs-fixer": "vendor/bin/phpcbf --standard=PSR2 src/",
     "phploc": "vendor/bin/phploc src/",
     "phpmd": "vendor/bin/phpmd src/ text ruleset.xml",
-    "phpcpd": "vendor/bin/phpcpd src/"
+    "phpcpd": "vendor/bin/phpcpd src/",
+    "test-all": [
+      "composer php-cs-fixer",
+      "composer phpcs",
+      "composer phpmd",
+      "composer phpcpd",
+      "composer test"
+    ]
   },
   "config": {
     "preferred-install": {
