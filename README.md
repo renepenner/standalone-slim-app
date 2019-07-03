@@ -1,4 +1,4 @@
-# PHP Standalone Slim Framework App
+# Slim API App - Skeleton
 
 A Standalone PHP Application for training best practices and give other developers
 in our team an example of writing good code.
@@ -24,7 +24,7 @@ compse
 
 1) First clone the repository from github:
     ```bash
-    git clone git@github.com:renepenner/standalone-slim-app.git
+    git clone git@github.com:wambo-co/slim-api-skeleton.git
     ```
 2) install 
     ```bash
