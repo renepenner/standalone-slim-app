@@ -2,12 +2,12 @@
 namespace Wambo\Demo\Demo\Presenter\Factory;
 
 use Wambo\Demo\Demo\Domain\Message;
-use Wambo\Demo\Demo\Presenter\ViewModel\MessageModel;
+use Wambo\Demo\Demo\Presenter\ViewModel\MessageViewModel;
 
 class MessageFactory
 {
-    public function getMessageModel(Message $message) : MessageModel
+    public function getMessageModel(Message $message) : MessageViewModel
     {
-        return new MessageModel($message->getMessage());
+        return new MessageViewModel($message->getMessage());
     }
 }

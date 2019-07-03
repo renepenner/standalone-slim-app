@@ -3,7 +3,7 @@ namespace Wambo\Demo;
 
 use Exception;
 use Wambo\Demo\Core\App;
-use Wambo\Demo\Demo\Registration;
+use Wambo\Demo\Demo\Registration as DemoRegistration;
 
 error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
 ini_set('display_errors', 1);
@@ -22,7 +22,7 @@ if (!file_exists($autoload_filename)) {
 require_once $autoload_filename;
 
 $app = new App();
-$app->registerPackage(new Registration());
+$app->registerPackage(new DemoRegistration());
 try {
     $app->run();
 } catch (Exception $e) {

@@ -1,7 +1,9 @@
 <?php
 namespace Wambo\Demo\Demo\Presenter\ViewModel;
 
-class MessageModel
+use JsonSerializable;
+
+class MessageViewModel implements JsonSerializable
 {
     private $message;
 
@@ -13,5 +15,12 @@ class MessageModel
     public function getMessage(): string
     {
         return $this->message;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'message' => $this->getMessage()
+        ];
     }
 }
