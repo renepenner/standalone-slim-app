@@ -6,7 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
 use Wambo\Demo\Core\Presenter\JsonPresenter;
 use Wambo\Demo\Demo\Presenter\Factory\MessageFactory;
-use Wambo\Demo\Demo\Repository\MessageProvider;
+use Wambo\Demo\Demo\Repository\MessageRepository;
 
 class HelloWorld
 {
@@ -15,7 +15,7 @@ class HelloWorld
     private $presenter;
 
     public function __construct(
-        MessageProvider $messageRepository,
+        MessageRepository $messageRepository,
         MessageFactory $messageFactory,
         JsonPresenter $presenter
     ) {
