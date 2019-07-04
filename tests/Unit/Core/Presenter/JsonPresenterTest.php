@@ -21,4 +21,5 @@ class JsonPresenterTest extends TestCase
 
         $this->assertEquals('{"message":"Hallo Test!"}', $newResponse->getBody());
     }
+
 }
