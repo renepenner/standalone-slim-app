@@ -1,0 +1,48 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Slim API Skeleton",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Development Server"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "operationId": "Wambo\\Demo\\Demo\\Action\\HelloWorld::__invoke",
+                "responses": {
+                    "200": {
+                        "description": "Hello World Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageViewModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "MessageViewModel": {
+                "properties": {
+                    "message": {
+                        "description": "The Message",
+                        "required": [
+                            "message"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

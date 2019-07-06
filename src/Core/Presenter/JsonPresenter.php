@@ -22,6 +22,8 @@ class JsonPresenter
         $body = new Stream(fopen('php://temp', 'r+'));
         $body->write($json);
 
-        return $response->withBody($body);
+        return $response
+            ->withHeader('Content-Type', 'application/json')
+            ->withBody($body);
     }
 }

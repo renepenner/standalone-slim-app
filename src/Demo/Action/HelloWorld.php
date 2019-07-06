@@ -24,6 +24,16 @@ class HelloWorld
         $this->messageFactory = $messageFactory;
     }
 
+    /**
+     * @OA\Get(
+     *     path="/",
+     *     @OA\Response(
+     *      response="200",
+     *      description="Hello World Message",
+     *      @OA\JsonContent(ref="#/components/schemas/MessageViewModel"),
+     *   )
+     * )
+     */
     public function __invoke(Response $response) : ResponseInterface
     {
         try {
