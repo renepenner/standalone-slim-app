@@ -17,6 +17,7 @@ class MessageTest extends TestCase
         $message = new Message($validMessage, $language);
 
         $this->assertEquals($validMessage, $message->getMessage());
+        $this->assertEquals($language, $message->getLanguage());
     }
 
     /**

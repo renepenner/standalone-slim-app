@@ -34,7 +34,7 @@
   "scripts": {
     "start": "php -S localhost:8000 -t public",
     "report": "php -S localhost:8000 -t report",
-    "test": "phpunit",
+    "test": "phpunit --coverage-text",
     "phpcs": "vendor/bin/phpcs --standard=PSR2 src/",
     "phpcbf": "vendor/bin/phpcbf --standard=PSR2 src/ > /dev/null || true",
     "phploc": "vendor/bin/phploc src/",

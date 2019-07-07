@@ -34,6 +34,7 @@ class LanguageTest extends TestCase
         return [
             ['', InvalidArgumentException::class],
             ['DEU', InvalidArgumentException::class],
+            ['XX', InvalidArgumentException::class],
             [null, TypeError::class],
             [123, TypeError::class],
             [array(), TypeError::class],
