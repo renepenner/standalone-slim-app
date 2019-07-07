@@ -8,8 +8,7 @@ phases:
       - composer install
   build:
     commands:
-      - composer swagger-create
-      - composer generate-metrics
+      - composer build-docs
 
 artifacts:
   files:

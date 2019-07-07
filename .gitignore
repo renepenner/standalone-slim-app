@@ -4,3 +4,4 @@
 .phpunit.result.cache
 /doc/metrics
 /doc/swagger/swagger.json
+/doc/coverage

@@ -41,8 +41,14 @@
     "phpmd": "vendor/bin/phpmd src/ text ruleset.xml",
     "phpcpd": "vendor/bin/phpcpd --min-lines 3 --min-tokens 20 src/",
     "phpmnd": "vendor/bin/phpmnd --non-zero-exit-on-violation ./src",
-    "swagger-create": "./vendor/bin/openapi -o doc/swagger/swagger.json --bootstrap src/config.php --format json src/",
+    "generate-swagger": "./vendor/bin/openapi -o doc/swagger/swagger.json --bootstrap src/config.php --format json src/",
     "generate-metrics": "./vendor/bin/phpmetrics ./src --report-html=doc/metrics",
+    "generate-coverage": "./vendor/bin/phpunit --coverage-html doc/coverage",
+    "build-docs": [
+      "composer generate-swagger",
+      "composer generate-metrics",
+      "composer generate-coverage"
+    ],
     "test-all": [
       "composer phpcbf",
       "composer phpcs",

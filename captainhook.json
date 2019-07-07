@@ -24,11 +24,6 @@
                 "action": "composer test-all",
                 "options": [],
                 "conditions": []
-            },
-            {
-                "action": "composer swagger-create",
-                "options": [],
-                "conditions": []
             }
         ]
     }
