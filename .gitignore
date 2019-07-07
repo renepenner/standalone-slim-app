@@ -2,3 +2,5 @@
 /.idea
 .DS_Store
 .phpunit.result.cache
+/doc/metrics
+/doc/swagger/swagger.json

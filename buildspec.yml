@@ -6,3 +6,18 @@ phases:
       php: 7.3
     commands:
       - composer install
+  build:
+    commands:
+      - composer swagger-create
+      - composer generate-metrics
+
+artifacts:
+  files:
+    - './swagger/**/*'
+    - './metrics/**/*'
+  base-directory:
+    - './doc'
+
+cache:
+  paths:
+    - '/root/.composer/**/*'
