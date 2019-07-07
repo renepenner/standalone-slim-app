@@ -1,7 +1,8 @@
 <?php
 namespace Wambo\Demo\Demo\Domain;
 
-use Exception;
+use InvalidArgumentException;
+use TypeError;
 
 class Message
 {
@@ -9,12 +10,12 @@ class Message
     private $language;
 
     /**
-     * @throws Exception
+     * @throws InvalidArgumentException
      */
     public function __construct(string $message, Language $language)
     {
         if (empty($message)) {
-            throw new Exception('message can not be empty');
+            throw new InvalidArgumentException('Message can not be empty');
         }
 
         $this->message = $message;

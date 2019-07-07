@@ -7,33 +7,35 @@ use TypeError;
 use Wambo\Demo\Demo\Domain\Language;
 use Wambo\Demo\Demo\Domain\Message;
 
-class LanguageTest extends TestCase
+class MessageTest extends TestCase
 {
-    public function testValidLanguageString()
+    public function testValidMessage()
     {
-        $languageParameter = 'de';
-        $language = new Language($languageParameter);
+        $validMessage = 'Hello TestCase!';
+        $language = $this->createMock(Language::class);
 
-        $this->assertEquals($language->getValue(), $languageParameter);
+        $message = new Message($validMessage, $language);
+
+        $this->assertEquals($validMessage, $message->getMessage());
     }
 
     /**
-     * @param $invalidLanguage
-     * @param $errorClass
+     * @param $invalidMessage
      * @throws InvalidArgumentException
      * @dataProvider invalidMessageProvider
      */
-    public function testInvalidLanguage($invalidLanguage, $errorClass)
+    public function testInvalidMessage($invalidMessage, $errorClass)
     {
         $this->expectException($errorClass);
-        new Language($invalidLanguage);
+
+        $language = $this->createMock(Language::class);
+        new Message($invalidMessage, $language);
     }
 
     public function invalidMessageProvider()
     {
         return [
             ['', InvalidArgumentException::class],
-            ['DEU', InvalidArgumentException::class],
             [null, TypeError::class],
             [123, TypeError::class],
             [array(), TypeError::class],

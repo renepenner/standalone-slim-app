@@ -17,6 +17,10 @@ class Language
      */
     public function __construct(string $language)
     {
+        if (strlen($language) !== 2) {
+            throw new InvalidArgumentException('Language code must be 2 letters long');
+        }
+
         if (!in_array($language, self::AVAILABLE_LANGUAGES)) {
             throw new InvalidArgumentException('Language not supported!');
         }
