@@ -13,14 +13,25 @@
     "paths": {
         "/": {
             "get": {
+                "summary": "Returns a Demo Message",
                 "operationId": "Wambo\\Demo\\Demo\\Action\\HelloWorld::__invoke",
                 "responses": {
                     "200": {
-                        "description": "Hello World Message",
+                        "description": "Returns a MessageViewModel",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageViewModel"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Returns a ErrorViewModel",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorViewModel"
                                 }
                             }
                         }
@@ -31,6 +42,18 @@
     },
     "components": {
         "schemas": {
+            "ErrorViewModel": {
+                "properties": {
+                    "message": {
+                        "description": "The Message",
+                        "required": [
+                            "message"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "MessageViewModel": {
                 "properties": {
                     "message": {

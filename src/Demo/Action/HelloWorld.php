@@ -3,12 +3,12 @@ namespace Wambo\Demo\Demo\Action;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;
-use Slim\Http\Response;
+use Wambo\Demo\Core\Action\CoreAction;
 use Wambo\Demo\Core\Presenter\JsonPresenter;
 use Wambo\Demo\Demo\Presenter\Factory\MessageFactory;
 use Wambo\Demo\Demo\Repository\MessageRepository;
 
-class HelloWorld
+class HelloWorld extends CoreAction
 {
     private $messageRepository;
     private $messageFactory;
@@ -27,24 +27,29 @@ class HelloWorld
     /**
      * @OA\Get(
      *     path="/",
+     *     summary="Returns a Demo Message",
      *     @OA\Response(
-     *      response="200",
-     *      description="Hello World Message",
-     *      @OA\JsonContent(ref="#/components/schemas/MessageViewModel"),
-     *   )
+     *       response="200",
+     *       description="Returns a MessageViewModel",
+     *       @OA\JsonContent(ref="#/components/schemas/MessageViewModel"),
+     *     ),
+     *     @OA\Response(
+     *       response="500",
+     *       description="Returns a ErrorViewModel",
+     *       @OA\JsonContent(ref="#/components/schemas/ErrorViewModel"),
+     *     )
      * )
      */
-    public function __invoke(Response $response) : ResponseInterface
+    public function __invoke(ResponseInterface $response): ResponseInterface
     {
         try {
             $message = $this->messageRepository->getDemoMessage();
-            $messageViewModel = $this->messageFactory->getMessageModel($message);
-            return $this->presenter->__invoke($response, $messageViewModel);
+            $viewModel = $this->messageFactory->getMessageViewModel($message);
         } catch (Exception $exception) {
-            // ToDo: Build an error presenter
-            return $response
-                ->withStatus(500)
-                ->write($exception->getMessage());
+            $response = $response->withStatus(500);
+            $viewModel = $this->createErrorViewModel($exception);
         }
+
+        return $this->presenter->__invoke($response, $viewModel);
     }
 }
