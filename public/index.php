@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace Wambo\Demo;
 
 use Exception;
@@ -6,7 +8,7 @@ use Wambo\Demo\Core\App;
 use Wambo\Demo\Demo\Registration as DemoRegistration;
 
 error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
-ini_set('display_errors', 1);
+ini_set('display_errors', '1');
 
 // define root directory for the project
 define('API_ROOT_DIR', dirname(getcwd() . '..'));
