@@ -20,7 +20,7 @@ class ErrorViewModel implements JsonSerializable
 
     public function __construct(Exception $exception)
     {
-        $this->message = $exception->getTraceAsString() . $exception->getMessage();
+        $this->message = $exception->getMessage();
     }
 
     public function jsonSerialize()
