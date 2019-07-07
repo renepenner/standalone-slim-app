@@ -30,3 +30,6 @@ compse
     ```bash
     composer install
     ```
+### Documentation
+
+http://api-skeleton-doc.s3-website.eu-central-1.amazonaws.com/
