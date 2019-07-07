@@ -5,6 +5,8 @@ use InvalidArgumentException;
 
 class Language
 {
+    const LANGUAGE_CODE_LENGTH = 2;
+
     const EN = 'en';
     const DE = 'de';
 
@@ -17,7 +19,7 @@ class Language
      */
     public function __construct(string $language)
     {
-        if (strlen($language) !== 2) {
+        if (strlen($language) !== self::LANGUAGE_CODE_LENGTH) {
             throw new InvalidArgumentException('Language code must be 2 letters long');
         }
 
