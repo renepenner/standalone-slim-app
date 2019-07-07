@@ -40,7 +40,7 @@
     "phploc": "vendor/bin/phploc src/",
     "phpmd": "vendor/bin/phpmd src/ text ruleset.xml",
     "phpcpd": "vendor/bin/phpcpd --min-lines 3 --min-tokens 20 src/",
-    "phpmnd": "vendor/bin/phpmnd ./src",
+    "phpmnd": "vendor/bin/phpmnd --non-zero-exit-on-violation ./src",
     "swagger-create": "./vendor/bin/openapi -o public/swagger/swagger.json --bootstrap src/config.php --format json src/",
     "test-all": [
       "composer phpcbf",
