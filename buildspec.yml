@@ -13,10 +13,8 @@ phases:
 
 artifacts:
   files:
-    - './swagger/**/*'
-    - './metrics/**/*'
-  base-directory:
-    - './doc'
+    - './**/*'
+  base-directory: './doc'
 
 cache:
   paths:
