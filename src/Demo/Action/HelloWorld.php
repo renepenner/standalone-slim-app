@@ -12,7 +12,7 @@ class HelloWorld extends CoreAction
 {
     private $messageRepository;
     private $messageFactory;
-    private $presenter;
+    protected $presenter;
 
     public function __construct(
         MessageRepository $messageRepository,

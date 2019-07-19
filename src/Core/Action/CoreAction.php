@@ -3,7 +3,6 @@ namespace Wambo\Demo\Core\Action;
 
 use Exception;
 use JsonSerializable;
-use Psr\Http\Message\ResponseInterface;
 use Wambo\Demo\Core\Presenter\ViewModel\ErrorViewModel;
 
 abstract class CoreAction
@@ -12,6 +11,4 @@ abstract class CoreAction
     {
         return new ErrorViewModel($exception);
     }
-
-    abstract public function __invoke(ResponseInterface $response): ResponseInterface;
 }

@@ -4,6 +4,7 @@
   "license": "MIT",
   "require": {
     "php": ">=7.3",
+    "ext-json": "*",
     "slim/slim": "^3.12",
     "php-di/slim-bridge": "^2.0",
     "phpmetrics/phpmetrics": "^2.4",
@@ -39,7 +40,7 @@
     "phpcbf": "vendor/bin/phpcbf --standard=PSR2 src/ > /dev/null || true",
     "phploc": "vendor/bin/phploc src/",
     "phpmd": "vendor/bin/phpmd src/ text ruleset.xml",
-    "phpcpd": "vendor/bin/phpcpd --min-lines 3 --min-tokens 20 src/",
+    "phpcpd": "vendor/bin/phpcpd --min-lines 3 --min-tokens 25 src/",
     "phpmnd": "vendor/bin/phpmnd --non-zero-exit-on-violation ./src",
     "generate-swagger": "./vendor/bin/openapi -o doc/swagger/swagger.json --bootstrap src/config.php --format json src/",
     "generate-metrics": "./vendor/bin/phpmetrics ./src --report-html=doc/metrics",
